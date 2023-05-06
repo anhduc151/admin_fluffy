@@ -1,0 +1,140 @@
+
+/* .signin__gr {
+    width: 100%;
+    min-height: 100vh;
+    padding-right: 40px;
+    padding-left: 40px;
+    background: url(../imgs/background.png);
+	background-size: cover;
+	background-position: center;
+    padding-bottom: 150px;
+} */
+
+.signin__pad::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#DA22FF, #9733EE);
+    clip-path: circle(30% at right 70%);
+  }
+  
+.signin__pad::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#E55D87, #5FC3E4);
+    clip-path: circle(20% at 10% 10%);
+}
+
+.box__signin {
+   max-width: 100%;
+   width: 450px;
+   height: 600px;
+   background-color: #fff;
+   padding: 30px;
+   border-radius: 50px;
+   box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.signin__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    padding: 20px;
+    color: #ef629f !important;
+}
+
+.signin__all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo__signin {
+    z-index: 10;
+    position: relative;
+    font-family: 'Lilita One', cursive;
+    font-weight: bold;
+    color: #ffffff;
+    top: 22px;
+    font-size: 50px;
+}
+
+.signin__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -20px;
+}
+
+
+.signin__form__regis {
+    padding-left: 20px;
+}
+
+.signin__form__button {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 172px;
+    background-color: #f66962;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.signin__form__button:hover {
+    background-color: #c45852 !important;
+}
+
+.signin__re {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.signin__remem__forgot {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.signin__wantr {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    top: -30px;
+}
+
+.signin__wantbutton {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 15px;
+    border: none;
+    background: #eecda3;
+    background: linear-gradient( to bottom, #ef629f, #eecda3 );
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.signin__wantbutton:hover {
+    background: #eecda3;
+    background: linear-gradient( to bottom, #ed458e, #db9b46 );
+}
+
+.signin__apply {
+    color: #fff;
+}
+

@@ -28,14 +28,14 @@
   }
   
   .AppGlass {
-    display: grid;
+    display: flex;
     height: 97%;
     width: 97%;
     background: var(--glass);
     border-radius: 2rem;
-    gap: 16px;
+    gap: 2%;
     /* grid-template-columns: 11rem auto 20rem; */
-    grid-template-columns: 11rem auto;
+    /* grid-template-columns: 11rem auto; */
     overflow: hidden;
   }
   

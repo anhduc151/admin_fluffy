@@ -2,9 +2,10 @@
 import {
   UilEstate,
   UilClipboardAlt,
-  UilUsersAlt,
-  UilPackage,
-  UilChart,
+  UilBookOpen,
+  UilBookReader,
+  UilHeadSide,
+  UilBill,
   // UilSignOutAlt,
 } from "@iconscout/react-unicons";
 
@@ -24,20 +25,20 @@ export const SidebarData = [
     heading: "Dashboard",
   },
   {
-    icon: UilClipboardAlt,
-    heading: "Orders",
+    icon: UilBookOpen,
+    heading: "Courses",
   },
   {
-    icon: UilUsersAlt,
-    heading: "Customers",
+    icon: UilBookReader,
+    heading: 'Student'
   },
   {
-    icon: UilPackage,
-    heading: 'Products'
+    icon: UilHeadSide,
+    heading: 'Tutor'
   },
   {
-    icon: UilChart,
-    heading: 'Analytics'
+    icon: UilBill,
+    heading: 'Payment'
   },
 ];
 
