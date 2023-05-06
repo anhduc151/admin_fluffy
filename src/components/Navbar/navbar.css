@@ -1,0 +1,28 @@
+.nav_header {
+  width: 100%;
+  height: 5%;
+}
+
+.nav_name {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.nav_container {
+  float: right;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.nav_h2 {
+  position: relative;
+  bottom: -1rem;
+}
+
+.nav_mail {
+  position: relative;
+  top: -1rem;
+}
