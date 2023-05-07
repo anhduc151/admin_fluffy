@@ -1,45 +1,11 @@
-
-/* .signin__gr {
-    width: 100%;
-    min-height: 100vh;
-    padding-right: 40px;
-    padding-left: 40px;
-    background: url(../imgs/background.png);
-	background-size: cover;
-	background-position: center;
-    padding-bottom: 150px;
-} */
-
-.signin__pad::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#DA22FF, #9733EE);
-    clip-path: circle(30% at right 70%);
-  }
-  
-.signin__pad::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#E55D87, #5FC3E4);
-    clip-path: circle(20% at 10% 10%);
-}
-
 .box__signin {
-   max-width: 100%;
-   width: 450px;
-   height: 600px;
-   background-color: #fff;
-   padding: 30px;
-   border-radius: 50px;
-   box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    width: 450px;
+    height: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -59,13 +25,14 @@
 }
 
 .logo__signin {
-    z-index: 10;
-    position: relative;
+    position: absolute;
+    top: 5%;
+    left: 5%;
     font-family: 'Lilita One', cursive;
     font-weight: bold;
-    color: #ffffff;
-    top: 22px;
+    color: #ef629f;
     font-size: 50px;
+    text-decoration: none !important;
 }
 
 .signin__bottom {
@@ -83,10 +50,11 @@
 }
 
 .signin__form__button {
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 25px;
     width: 172px;
-    background-color: #f66962;
+    background: #eecda3;
+    background: linear-gradient(to bottom, #ef629f, #eecda3);
     font-size: 22px;
     display: flex;
     align-items: center;
@@ -125,16 +93,15 @@
     border-radius: 15px;
     border: none;
     background: #eecda3;
-    background: linear-gradient( to bottom, #ef629f, #eecda3 );
+    background: linear-gradient(to bottom, #ef629f, #eecda3);
     box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 .signin__wantbutton:hover {
     background: #eecda3;
-    background: linear-gradient( to bottom, #ed458e, #db9b46 );
+    background: linear-gradient(to bottom, #ed458e, #db9b46);
 }
 
 .signin__apply {
     color: #fff;
 }
-

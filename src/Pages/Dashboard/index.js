@@ -9,15 +9,14 @@ function DashBoard() {
   return (
 
     <div className="AppGlass">
-      <Sidebar />
-      <div className='dashboard_content'>
-        <h1>Dashboard</h1>
-        <MainDash />
-      </div>
       <Navbar />
-
-
-
+      <div className='App_container'>
+        <Sidebar />
+        <div className='App_content'>
+          <h1>Dashboard</h1>
+          <MainDash />
+        </div>
+      </div>
     </div>
 
   );

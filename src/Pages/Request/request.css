@@ -1,0 +1,57 @@
+.request_approve {
+    background-color: rgb(30, 205, 15);
+}
+
+.request_reject {
+    background-color: rgb(255, 21, 0);
+    color: #fff;
+}
+
+.request_modal {
+    width: 64% !important;
+}
+
+.request_name, .request_date, .request_email, .request_schools, .request_experience, .request_certifications {
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.request_child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.request_step {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 3px dashed brown;
+    border-radius: 20px;
+    margin-top: 24px;
+}
+
+.request_title2 {
+    color: cadetblue;
+    text-align: center;
+}
+
+.bxs-label {
+    margin-right: 14px;
+}
+
+.request_images {
+    padding: 20px;
+    border: 3px dashed #0eabe4;
+    border-radius: 26px;
+    width: 60%;
+    height: 40% !important;
+}
+
+.request_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

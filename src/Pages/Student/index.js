@@ -1,24 +1,103 @@
-import Sidebar from '../../components/SideBar/Sidebar';
-import MainDash from '../../components/MainDash/MainDash';
 import Navbar from '../../components/Navbar';
+import Sidebar from '../../components/SideBar/Sidebar';
 import React, { useEffect, useState } from "react";
+import '../Student/student.css'
+import { Space, Table, Tag } from 'antd';
+
 
 function Student() {
-    const [selected, setSelected] = useState(3);
+  const [selected, setSelected] = useState(3);
 
-    useEffect(() => {
-      setSelected(3);
-    }, []);
-    return ( 
-        <div className="AppGlass">
-      <Sidebar />
-      <div className='dashboard_content'>
-        <h1>Student</h1>
-        <MainDash />
-      </div>
+  useEffect(() => {
+    setSelected(3);
+  }, []);
+
+  // 
+
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      render: (text) => <a>{text}</a>,
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'email',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Tags',
+      key: 'tags',
+      dataIndex: 'tags',
+      render: (_, { tags }) => (
+        <>
+          {tags.map((tag) => {
+            let color = tag.length > 5 ? 'geekblue' : 'green';
+            if (tag === 'loser') {
+              color = 'volcano';
+            }
+            return (
+              <Tag color={color} key={tag}>
+                {tag.toUpperCase()}
+              </Tag>
+            );
+          })}
+        </>
+      ),
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, record) => (
+        <Space size="middle">
+          <a>Invite {record.name}</a>
+          <a>Delete</a>
+        </Space>
+      ),
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice', 'developer'],
+    },
+    {
+      key: '2',
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      tags: ['loser'],
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+  ];
+  return (
+    <div className="AppGlass">
       <Navbar />
+      <div className='App_container'>
+        <Sidebar />
+        <div className='App_content'>
+          <h1>Students</h1>
+          <Table columns={columns} dataSource={data} />
+        </div>
+      </div>
+
     </div>
-     );
+  );
 }
 
 export default Student;

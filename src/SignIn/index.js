@@ -85,22 +85,22 @@ function SignIn() {
                     >
                       Login
                     </Button>
-                    <p>
+                    {/* <p>
                       Don't have account{" "}
                       <Link to="/sign-up" className="signin__form__regis">
                         Register now!
                       </Link>
-                    </p>
+                    </p> */}
                   </div>
                 </Form.Item>
-                <div className="signin__wantr">
+                {/* <div className="signin__wantr">
                   <p className="signin__want_p">Want to become a tutor?</p>
                   <button className="signin__wantbutton">
                     <Link to="/apply-tutor" className="signin__apply">
                       Apply today
                     </Link>
                   </button>
-                </div>
+                </div> */}
               </Form>
             </div>
           </div>

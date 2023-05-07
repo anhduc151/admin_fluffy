@@ -1,27 +1,19 @@
 import React from "react";
 import { Avatar, Dropdown, Menu } from "antd";
 import user from "../../imgs/profile.png";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../Navbar/navbar.css'
 
 function Navbar() {
     const menu = (
         <Menu>
             <Menu.Item key="profile">
-                Profile
-            </Menu.Item>
-            <Menu.Item key="logout" onClick={() => handleLogout()}>
-                Logout
+                <Link to="/profile">
+                  Profile
+                </Link>
             </Menu.Item>
         </Menu>
     );
-    const navigate = useNavigate();
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("refreshToken");
-        navigate("/");
-        window.location.reload(false);
-    };
     return (
         <nav className="nav_header">
             <div className="nav_container">

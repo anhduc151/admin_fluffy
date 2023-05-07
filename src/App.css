@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
   --orange: #fca61f;
   --black: #242d49;
@@ -12,7 +12,6 @@
 }
 
 .App {
-  /* padding: 0.5rem 3.5rem; */
   color: var(--black);
   background: linear-gradient(
     106.37deg,
@@ -49,4 +48,4 @@
   .AppGlass{
     grid-template-columns: 1fr;
   } 
-}
+} */

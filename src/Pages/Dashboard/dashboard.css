@@ -28,15 +28,24 @@
   }
   
   .AppGlass {
-    display: flex;
     height: 97%;
     width: 97%;
     background: var(--glass);
     border-radius: 2rem;
     gap: 2%;
     /* grid-template-columns: 11rem auto 20rem; */
-    /* grid-template-columns: 11rem auto; */
     overflow: hidden;
+  }
+
+  .App_container {
+    display: flex;
+    flex-direction: row !important;
+    gap: 20px;
+  }
+
+  .App_content {
+    width: 64%;
+    margin-top: 40px;
   }
   
   @media screen and (max-width: 1200px) {

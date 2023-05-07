@@ -6,6 +6,7 @@ import {
   UilBookReader,
   UilHeadSide,
   UilBill,
+  UilFolderQuestion,
   // UilSignOutAlt,
 } from "@iconscout/react-unicons";
 
@@ -28,21 +29,21 @@ export const SidebarData = [
   },
   {
     id: 2,
-    url: '/courses',
-    icon: UilBookOpen,
-    heading: "Courses",
-  },
-  {
-    id: 3,
     url: '/students',
     icon: UilBookReader,
     heading: 'Student'
   },
   {
-    id: 4,
+    id: 3,
     url: '/tutors',
     icon: UilHeadSide,
     heading: 'Tutor'
+  },
+  {
+    id: 4,
+    url: '/request',
+    icon: UilFolderQuestion,
+    heading: 'Request'
   },
   {
     id: 5,
