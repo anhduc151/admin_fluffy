@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DashBoard from '../Pages/Dashboard';
-import SignIn from '../SignIn/index'
 import Courses from '../Pages/Courses'
 import Payment from '../Pages/Payment'
 import Student from '../Pages/Student'
 import Tutor from '../Pages/Tutor'
+import SignIn from '../SignIn/index'
 
 const publicRoutes = [
         { path: '/signin', component: SignIn},

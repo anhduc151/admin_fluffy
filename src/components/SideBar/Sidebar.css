@@ -45,9 +45,11 @@
   height: 2.5rem;
   margin-left: 2rem;
   position: relative;
-  transition: all 300ms ease;
+  transition: all 300ms ease !important;
   border-radius: 0.7rem;
   font-size: 14px;
+  text-decoration: none !important;
+  color: black;
 }
 
 .menuItem:hover {
@@ -63,6 +65,7 @@
 .active {
   background: var(--activeItem);
   margin-left: 0;
+  transition: all 300ms ease !important;
 }
 .active::before {
   content: "";
