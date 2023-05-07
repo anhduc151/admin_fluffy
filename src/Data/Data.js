@@ -21,22 +21,32 @@ import img3 from "../imgs/img3.png";
 // Sidebar Data
 export const SidebarData = [
   {
+    id: 1,
+    url: '/',
     icon: UilEstate,
     heading: "Dashboard",
   },
   {
+    id: 2,
+    url: '/courses',
     icon: UilBookOpen,
     heading: "Courses",
   },
   {
+    id: 3,
+    url: '/students',
     icon: UilBookReader,
     heading: 'Student'
   },
   {
+    id: 4,
+    url: '/tutors',
     icon: UilHeadSide,
     heading: 'Tutor'
   },
   {
+    id: 5,
+    url: '/payment',
     icon: UilBill,
     heading: 'Payment'
   },
