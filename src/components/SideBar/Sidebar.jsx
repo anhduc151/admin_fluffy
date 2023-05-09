@@ -5,11 +5,11 @@ import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const [selected, setSelected] = useState(0);
 
+  const navigate = useNavigate()
   const [expanded, setExpaned] = useState(true);
 
   const sidebarVariants = {
@@ -20,7 +20,13 @@ const Sidebar = () => {
       left: "-60%",
     },
   };
-  console.log(window.innerWidth);
+
+  const handleLogOut = () =>{
+    localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
+    navigate("/signin");
+    // window.location.reload(false);
+  }
   return (
     <>
       <div
@@ -49,7 +55,6 @@ const Sidebar = () => {
                 activeClassName="active"
                 className="menuItem"
                 key={index}
-                onClick={() => setSelected(index)}
               >
                 <item.icon />
                 <span>{item.heading}</span>
@@ -57,7 +62,7 @@ const Sidebar = () => {
             );
           })}
           {/* signoutIcon */}
-          <div className="menuItem">
+          <div className="menuItem" onClick={handleLogOut}>
             <UilSignOutAlt />
             Log out
           </div>

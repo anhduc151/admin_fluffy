@@ -1,20 +1,13 @@
 import Sidebar from '../../components/SideBar/Sidebar';
-import MainDash from '../../components/MainDash/MainDash';
 import Navbar from '../../components/Navbar';
 import '../Payment/payment.css'
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Table } from 'antd';
 
 
 function Payment() {
-  const [selected, setSelected] = useState(4);
 
-  useEffect(() => {
-    setSelected(4);
-  }, []);
-
-  // 
   const columns = [
     {
       title: 'Name',
@@ -41,7 +34,6 @@ function Payment() {
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const onSelectChange = (newSelectedRowKeys) => {
-    console.log('selectedRowKeys changed: ', newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
   const rowSelection = {

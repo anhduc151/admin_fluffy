@@ -1,15 +1,66 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
-
+import { gql, useMutation } from "@apollo/client";
 import "../SignIn/SignIn.css";
+import { useDispatch } from "react-redux";
+import {setCurrentUser} from "../Redux/feat/userSlice"
+import {setError} from "../Redux/feat/notificationSlice"
 
 
 function SignIn() {
- 
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+
+  const SIGNIN = gql`
+    mutation signIn($input: SignInDto!) {
+      signIn(input: $input) {
+        token
+        refreshToken
+        id
+        firstName
+        lastName
+        email
+        type
+      }
+    }
+  `;
+  const [signIn] = useMutation(SIGNIN);
+  const onFinish = (values) => {
+    const datatemp = {
+      email: values.username,
+      password: values.password,
+    };
+    const getData = async () => {
+      try {
+        const result = await signIn({
+          variables: {
+            input: datatemp,
+          },
+        });
+        localStorage.setItem("token", result.data.signIn.token);
+        localStorage.setItem("refreshToken", result.data.signIn.refreshToken);
+
+        let userData = {
+          id: result.data.signIn.id,
+          lastName: result.data.signIn.lastName,
+          firstName: result.data.signIn.firstName,
+          type: result.data.signIn.type,
+          email: result.data.signIn.email
+        };
+        dispatch(setCurrentUser(userData));
+        navigate("/")
+      } catch (error) {
+        dispatch(setError({ message: error.message }));
+      }
+    };
+    getData();
+  }
+
+
   return (
     <>
-      {/* {user && Navi} */}
       <div className="signin__pad">
         <div className="signin__gr">
           <div className="signin__logo">
@@ -29,7 +80,7 @@ function SignIn() {
                 initialValues={{
                   remember: true,
                 }}
-                // onFinish={onFinish}
+                onFinish={onFinish}
               >
                 <Form.Item
                   label="Username"
@@ -83,24 +134,10 @@ function SignIn() {
                       htmlType="submit"
                       className="signin__form__button"
                     >
-                      Login
+                      SignIn
                     </Button>
-                    {/* <p>
-                      Don't have account{" "}
-                      <Link to="/sign-up" className="signin__form__regis">
-                        Register now!
-                      </Link>
-                    </p> */}
                   </div>
                 </Form.Item>
-                {/* <div className="signin__wantr">
-                  <p className="signin__want_p">Want to become a tutor?</p>
-                  <button className="signin__wantbutton">
-                    <Link to="/apply-tutor" className="signin__apply">
-                      Apply today
-                    </Link>
-                  </button>
-                </div> */}
               </Form>
             </div>
           </div>

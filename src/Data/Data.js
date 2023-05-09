@@ -2,7 +2,6 @@
 import {
   UilEstate,
   UilClipboardAlt,
-  UilBookOpen,
   UilBookReader,
   UilHeadSide,
   UilBill,

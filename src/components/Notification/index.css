@@ -1,0 +1,55 @@
+#notification-box {
+  width: 500px;
+  min-height: 100px;
+  max-height: 130px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  z-index: 2500;
+  right: 1%;
+  top: 5%;
+  position: absolute;
+  background-color: #fec9c9;
+  border: 3px solid #fd9869;
+  display: flex;
+  align-items: center;
+  animation: notify-animation 0.2s ease-in;
+}
+#notification-box .notification-icon {
+  flex: 1.2;
+}
+
+#notification-box .notification-icon .notify-icon {
+  font-size: 35px;
+  color: #fd9869;
+  position: relative;
+  z-index: 3;
+}
+
+#notification-box .notification-icon .notify-icon::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #e469fd;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+#notification-box .notification-content {
+  flex: 7.8;
+  font-size: 17px;
+}
+
+@keyframes notify-animation {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
