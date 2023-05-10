@@ -44,6 +44,7 @@ function Tutor() {
                                     description
                                 }
                                 certifications{
+                                    name
                                     organization
                                     score
                                     awardUrl

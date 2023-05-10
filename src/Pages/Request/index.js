@@ -57,6 +57,7 @@ function RequestTutor() {
                                     description
                                 }
                                 certifications{
+                                    name
                                     organization
                                     score
                                     awardUrl
@@ -267,7 +268,6 @@ function RequestTutor() {
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Schools: </h2>
                                                 <p>{sch.name}</p>
-
                                             </div>
                                             <span className='request_span'>From: {dayFrom}/{monthFrom}/{yearFrom}</span>
                                             <span className='request_span'>To: {dayTo}/{monthTo}/{yearTo}</span>
