@@ -2,6 +2,7 @@ import Sidebar from '../../components/SideBar/Sidebar';
 import Navbar from '../../components/Navbar';
 import React, { useState } from "react";
 import { Button, Space, Table, Modal } from 'antd';
+import { ExclamationCircleFilled } from "@ant-design/icons";
 import './request.css'
 import { useEffect } from 'react';
 import client from "../../configGQL"
@@ -10,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setError } from '../../Redux/feat/notificationSlice';
 
 function RequestTutor() {
+    const { confirm } = Modal;
     const dispatch = useDispatch()
     const schoolsList = useSelector(state => state.schools.schoolsData)
     const [isReload, setIsReload] = useState(true)
@@ -148,7 +150,22 @@ function RequestTutor() {
         };
         getData();
     }
-
+    const showPromiseConfirmAppoved = async (record) => {
+        confirm({
+            title: `Do you want to approved ?`,
+            icon: <ExclamationCircleFilled />,
+            onOk: () => handleApprove(record),
+            onCancel() { },
+        });
+    };
+    const showPromiseConfirmRejected = async (record) => {
+        confirm({
+            title: `Do you want to reject ?`,
+            icon: <ExclamationCircleFilled />,
+            onOk: () => handleReject(record),
+            onCancel() { },
+        });
+    };
     const columns = [
         {
             title: 'Name',
@@ -194,14 +211,14 @@ function RequestTutor() {
                     <Button
                         type='primary'
                         className='request_approve'
-                        onClick={() => handleApprove(record)}
+                        onClick={() => showPromiseConfirmAppoved(record)}
                     >
                         Approve
                     </Button>
                     <Button
                         type='default'
                         className='request_reject'
-                        onClick={() => handleReject(record)}
+                        onClick={() => showPromiseConfirmRejected(record)}
                     >
                         Reject
                     </Button>
