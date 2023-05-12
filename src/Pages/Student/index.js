@@ -128,6 +128,7 @@ function Student() {
       </div>
       <Modal
         className='request_modal'
+        closable={false}
         open={isModalOpen}
         onCancel={handleCancel}
         footer={

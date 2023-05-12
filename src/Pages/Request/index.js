@@ -254,6 +254,7 @@ function RequestTutor() {
                 </div>
             </div>
             <Modal
+                closable={false}
                 className='request_modal'
                 open={isModalOpen}
                 onCancel={handleCancel}
