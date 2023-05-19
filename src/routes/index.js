@@ -6,6 +6,7 @@ import Student from '../Pages/Student'
 import Tutor from '../Pages/Tutor'
 import SignIn from '../SignIn/index'
 import RequestTutor from '../Pages/Request';
+import Session from '../Pages/Session'
 
 const publicRoutes = [
         { path: '/signin', component: SignIn},
@@ -14,7 +15,8 @@ const publicRoutes = [
         { path: '/payment', component: Payment},
         { path: '/students', component: Student},
         { path: '/tutors', component: Tutor},
-        { path: 'request', component: RequestTutor},
+        { path: '/request', component: RequestTutor},
+        { path: '/session', component: Session},
 ]
 
 const privateRoutes = [

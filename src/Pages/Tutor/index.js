@@ -142,6 +142,7 @@ function Tutor() {
                         pagination={{
                             defaultPageSize: 10, // Số lượng hàng trên mỗi trang mặc định
                         }}
+                        className='table_id'
                     />
                 </div>
             </div>

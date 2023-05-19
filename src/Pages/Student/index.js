@@ -123,7 +123,7 @@ function Student() {
         <Sidebar />
         <div className='App_content'>
           <h1>Students</h1>
-          <Table columns={columns} dataSource={data} />
+          <Table columns={columns} dataSource={data} className='table_id'/>
         </div>
       </div>
       <Modal

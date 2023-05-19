@@ -6,8 +6,10 @@ import {
   UilHeadSide,
   UilBill,
   UilFolderQuestion,
+  UilBooks,
   // UilSignOutAlt,
 } from "@iconscout/react-unicons";
+
 
 // Analytics Cards imports
 import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
@@ -49,6 +51,12 @@ export const SidebarData = [
     url: '/payment',
     icon: UilBill,
     heading: 'Payment'
+  },
+  {
+    id: 6,
+    url: '/session',
+    icon: UilBooks,
+    heading: 'session'
   },
 ];
 
