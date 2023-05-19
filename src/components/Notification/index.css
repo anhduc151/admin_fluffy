@@ -12,8 +12,9 @@
   border: 3px solid #fd9869;
   display: flex;
   align-items: center;
-  animation: notify-animation 0.2s ease-in;
+  animation: notify-animation 0.2s ease-in-out;
 }
+
 #notification-box .notification-icon {
   flex: 1.2;
 }
@@ -47,9 +48,12 @@
 
 @keyframes notify-animation {
   0% {
-    opacity: 0.1;
+    transform: translateX(100%);
+    opacity: 0;
   }
+
   100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }

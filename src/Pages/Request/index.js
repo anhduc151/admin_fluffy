@@ -2,6 +2,7 @@ import Sidebar from '../../components/SideBar/Sidebar';
 import Navbar from '../../components/Navbar';
 import React, { useState } from "react";
 import { Button, Space, Table, Modal } from 'antd';
+import { ExclamationCircleFilled } from "@ant-design/icons";
 import './request.css'
 import { useEffect } from 'react';
 import client from "../../configGQL"
@@ -10,13 +11,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setError } from '../../Redux/feat/notificationSlice';
 
 function RequestTutor() {
+    const { confirm } = Modal;
     const dispatch = useDispatch()
     const schoolsList = useSelector(state => state.schools.schoolsData)
     const [isReload, setIsReload] = useState(true)
     const [tutorList, setTutorList] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [tutorProfile, setTutorProfile] = useState([])
-    
+
     const CONFIRM_TUTOR = gql`
     mutation confirmTutorProfile($input: ConfirmTutorProfileDto!) {
         confirmTutorProfile(input: $input) {
@@ -57,6 +59,7 @@ function RequestTutor() {
                                     description
                                 }
                                 certifications{
+                                    name
                                     organization
                                     score
                                     awardUrl
@@ -147,7 +150,22 @@ function RequestTutor() {
         };
         getData();
     }
-
+    const showPromiseConfirmAppoved = async (record) => {
+        confirm({
+            title: `Do you want to approved ?`,
+            icon: <ExclamationCircleFilled />,
+            onOk: () => handleApprove(record),
+            onCancel() { },
+        });
+    };
+    const showPromiseConfirmRejected = async (record) => {
+        confirm({
+            title: `Do you want to reject ?`,
+            icon: <ExclamationCircleFilled />,
+            onOk: () => handleReject(record),
+            onCancel() { },
+        });
+    };
     const columns = [
         {
             title: 'Name',
@@ -193,14 +211,14 @@ function RequestTutor() {
                     <Button
                         type='primary'
                         className='request_approve'
-                        onClick={() => handleApprove(record)}
+                        onClick={() => showPromiseConfirmAppoved(record)}
                     >
                         Approve
                     </Button>
                     <Button
                         type='default'
                         className='request_reject'
-                        onClick={() => handleReject(record)}
+                        onClick={() => showPromiseConfirmRejected(record)}
                     >
                         Reject
                     </Button>
@@ -236,6 +254,7 @@ function RequestTutor() {
                 </div>
             </div>
             <Modal
+                closable={false}
                 className='request_modal'
                 open={isModalOpen}
                 onCancel={handleCancel}
@@ -266,14 +285,17 @@ function RequestTutor() {
                                         <>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Schools: </h2>
-                                                <p>{sch.name}</p>
-
+                                                <h2 className='request_content'>{sch.name}</h2>
                                             </div>
-                                            <span className='request_span'>From: {dayFrom}/{monthFrom}/{yearFrom}</span>
-                                            <span className='request_span'>To: {dayTo}/{monthTo}/{yearTo}</span>
-                                            <div className='request_img'>
+                                            <div className='request_child'>
+                                                <h2 className='request_title1'>From: </h2>
+                                                <h2 className='request_content'>{dayFrom}/{monthFrom}/{yearFrom}</h2>
+                                                <h2 className='request_title1'>To: </h2>
+                                                <h2 className='request_content'>{dayTo}/{monthTo}/{yearTo}</h2>
+                                            </div>
+                                            <a target="_blank" href={data.scoreUrl} rel="noreferrer" className='request_img'>
                                                 <img src={data.scoreUrl} alt="" className='request_images' />
-                                            </div>
+                                            </a>
                                         </>
                                     )
                                 })}
@@ -298,17 +320,21 @@ function RequestTutor() {
                                         <>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Organization Name: </h2>
-                                                <p className='request_content'>{data.organization}</p>
+                                                <h2 className='request_content'>{data.organization}</h2>
                                             </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Position: </h2>
-                                                <p className='request_content'>{data.position}</p>
+                                                <h2 className='request_content'>{data.position}</h2>
                                             </div>
-                                            <span className='request_span'>From: {dayFrom}/{monthFrom}/{yearFrom}</span>
-                                            <span className='request_span'>To: {dayTo}/{monthTo}/{yearTo}</span>
+                                            <div className='request_child'>
+                                                <h2 className='request_title1'>From: </h2>
+                                                <h2 className='request_content'>{dayFrom}/{monthFrom}/{yearFrom}</h2>
+                                                <h2 className='request_span'>To: </h2>
+                                                <h2 className='request_content'>{dayTo}/{monthTo}/{yearTo}</h2>
+                                            </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Description: </h2>
-                                                <p className='request_content'>{data.description}</p>
+                                                <h2 className='request_content'>{data.description}</h2>
                                             </div>
                                         </>
                                     )
@@ -323,19 +349,19 @@ function RequestTutor() {
                                         <>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Organization Name: </h2>
-                                                <p className='request_content'>{data.organization}</p>
+                                                <h2 className='request_content'>{data.organization}</h2>
                                             </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Certification Name: </h2>
-                                                <p className='request_content'>{data.name}</p>
+                                                <h2 className='request_content'>{data.name}</h2>
                                             </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Score: </h2>
-                                                <p className='request_content'>{data.score}</p>
+                                                <h2 className='request_content'>{data.score}</h2>
                                             </div>
-                                            <div className='request_img'>
+                                            <a target="_blank" href={data.awardUrl} rel="noreferrer" className='request_img'>
                                                 <img src={data.awardUrl} alt="" className='request_images' />
-                                            </div>
+                                            </a>
                                         </>
                                     )
                                 })}

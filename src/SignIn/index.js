@@ -122,9 +122,9 @@ function SignIn() {
                         Remember me
                       </Checkbox>
                     </Form.Item>
-                    <Link className="login-form-forgot" to="/forgot-password">
+                    {/* <Link className="login-form-forgot" to="/forgot-password">
                       Forgot password
-                    </Link>
+                    </Link> */}
                   </div>
                 </Form.Item>
                 <Form.Item>

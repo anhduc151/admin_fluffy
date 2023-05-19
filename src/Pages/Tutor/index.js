@@ -44,6 +44,7 @@ function Tutor() {
                                     description
                                 }
                                 certifications{
+                                    name
                                     organization
                                     score
                                     awardUrl
@@ -135,7 +136,7 @@ function Tutor() {
             <div className='App_container'>
                 <Sidebar />
                 <div className='App_content'>
-                    <h1>Tutor Request</h1>
+                    <h1>Tutor</h1>
                     <Table
                         columns={columns}
                         dataSource={data}
@@ -148,6 +149,7 @@ function Tutor() {
             </div>
             <Modal
                 className='request_modal'
+                closable={false}
                 open={isModalOpen}
                 onCancel={handleCancel}
                 footer={
@@ -177,14 +179,17 @@ function Tutor() {
                                         <>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Schools: </h2>
-                                                <p>{sch.name}</p>
-
+                                                <h2 className='request_content'>{sch.name}</h2>
                                             </div>
-                                            <span className='request_span'>From: {dayFrom}/{monthFrom}/{yearFrom}</span>
-                                            <span className='request_span'>To: {dayTo}/{monthTo}/{yearTo}</span>
-                                            <div className='request_img'>
+                                            <div className='request_child'>
+                                                <h2 className='request_title1'>From: </h2>
+                                                <h2 className='request_content'>{dayFrom}/{monthFrom}/{yearFrom}</h2>
+                                                <h2 className='request_title1'>To: </h2>  
+                                                <h2 className='request_content'>{dayTo}/{monthTo}/{yearTo}</h2>
+                                            </div>
+                                            <a target="_blank" href={data.scoreUrl} rel="noreferrer" className='request_img'>
                                                 <img src={data.scoreUrl} alt="" className='request_images' />
-                                            </div>
+                                            </a>
                                         </>
                                     )
                                 })}
@@ -209,17 +214,21 @@ function Tutor() {
                                         <>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Organization Name: </h2>
-                                                <p className='request_content'>{data.organization}</p>
+                                                <h2 className='request_content'>{data.organization}</h2>
                                             </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Position: </h2>
-                                                <p className='request_content'>{data.position}</p>
+                                                <h2 className='request_content'>{data.position}</h2>
                                             </div>
-                                            <span className='request_span'>From: {dayFrom}/{monthFrom}/{yearFrom}</span>
-                                            <span className='request_span'>To: {dayTo}/{monthTo}/{yearTo}</span>
+                                            <div className='request_child'>
+                                                <h2 className='request_title1'>From: </h2>
+                                                <h2 className='request_content'>{dayFrom}/{monthFrom}/{yearFrom}</h2>
+                                                <h2 className='request_span'>To: </h2>  
+                                                <h2 className='request_content'>{dayTo}/{monthTo}/{yearTo}</h2>
+                                            </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Description: </h2>
-                                                <p className='request_content'>{data.description}</p>
+                                                <h2 className='request_content'>{data.description}</h2>
                                             </div>
                                         </>
                                     )
@@ -234,19 +243,19 @@ function Tutor() {
                                         <>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Organization Name: </h2>
-                                                <p className='request_content'>{data.organization}</p>
+                                                <h2 className='request_content'>{data.organization}</h2>
                                             </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Certification Name: </h2>
-                                                <p className='request_content'>{data.name}</p>
+                                                <h2 className='request_content'>{data.name}</h2>
                                             </div>
                                             <div className='request_child'>
                                                 <h2 className='request_title1'>Score: </h2>
-                                                <p className='request_content'>{data.score}</p>
+                                                <h2 className='request_content'>{data.score}</h2>
                                             </div>
-                                            <div className='request_img'>
+                                            <a target="_blank" href={data.awardUrl} rel="noreferrer" className='request_img'>
                                                 <img src={data.awardUrl} alt="" className='request_images' />
-                                            </div>
+                                            </a>
                                         </>
                                     )
                                 })}

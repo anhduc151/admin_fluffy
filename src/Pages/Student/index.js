@@ -128,6 +128,7 @@ function Student() {
       </div>
       <Modal
         className='request_modal'
+        closable={false}
         open={isModalOpen}
         onCancel={handleCancel}
         footer={
@@ -157,11 +158,16 @@ function Student() {
                     <>
                       <div className='request_child'>
                         <h2 className='request_title1'>Schools: </h2>
-                        <p>{sch.name}</p>
-
+                        <h2 className='request_content'>{sch.name}</h2>
                       </div>
-                      <span className='request_span'>From: {dayFrom}/{monthFrom}/{yearFrom}</span>
-                      <span className='request_span'>To: {dayTo}/{monthTo}/{yearTo}</span>
+                      <div className='request_child'>
+                        <h2 className='request_title1'>From: </h2>
+                        <h2 className='request_content'>{dayFrom}/{monthFrom}/{yearFrom}</h2>
+                      </div>
+                      <div className='request_child'>
+                        <h2 className='request_title1'>To: </h2>
+                        <h2 className='request_content'>{dayTo}/{monthTo}/{yearTo}</h2>
+                      </div>
                     </>
                   )
                 })}
