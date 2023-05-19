@@ -1,4 +1,5 @@
-:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-thead >tr>td {
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-thead>tr>th,
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-thead>tr>td {
     position: relative;
     color: rgba(0, 0, 0, 0.88);
     font-weight: 600;
@@ -8,13 +9,30 @@
     transition: background 0.2s ease;
 }
 
-:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-tbody >tr >th, :where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-tbody >tr >td {
-    transition: background 0.2s,border-color 0.2s;
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-tbody>tr>th,
+:where(.css-dev-only-do-not-override-ed5zg0).ant-table-wrapper .ant-table-tbody>tr>td {
+    transition: background 0.2s, border-color 0.2s;
     border-bottom: 1px solid #f0f0f0;
     text-align: center;
 }
 
-.table_id {
-    height: 35rem;
-    overflow-y: scroll;
+@media only screen and (min-width: 1500px) and (max-width: 2060px) {
+    .table_id {
+        height: auto;
+        overflow-y: none;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1500px) {
+    .table_id {
+        height: 32rem;
+        overflow-y: scroll;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .table_id {
+        height: 25rem;
+        overflow-y: scroll;
+    }
 }
