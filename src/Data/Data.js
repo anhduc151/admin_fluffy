@@ -7,6 +7,7 @@ import {
   UilBill,
   UilFolderQuestion,
   UilBooks,
+  UilCommentMessage,
   // UilSignOutAlt,
 } from "@iconscout/react-unicons";
 
@@ -56,7 +57,13 @@ export const SidebarData = [
     id: 6,
     url: '/session',
     icon: UilBooks,
-    heading: 'session'
+    heading: 'Session'
+  },
+  {
+    id: 7,
+    url: '/messages',
+    icon: UilCommentMessage,
+    heading: 'Messages'
   },
 ];
 
