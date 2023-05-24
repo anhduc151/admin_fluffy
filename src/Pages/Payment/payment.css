@@ -1,0 +1,228 @@
+.payment__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.payment__forms {
+    width: 150px;
+    font-size: 30px;
+}
+
+.view__payment {
+    color: #fff;
+    background: #eecda3;
+    background: linear-gradient(to bottom, #ef629f, #eecda3);
+}
+
+/* kich thuoc form */
+.payment__modal {
+    margin-left: 500px;
+    width: 900px !important;
+    height: 500px !important;
+}
+
+.bill__ma {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.bill__copy {
+    display: "flex";
+    justify-content: space-between;
+    margin-bottom: 24px;
+    position: relative;
+    top: -10px;
+    background: #eecda3;
+    background: linear-gradient(to bottom, #ef629f, #eecda3);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.bill__codema {
+    color: #fff;
+    font-size: 20px !important;
+}
+
+.bill__atm {
+    color: #eceaea;
+}
+
+.payment__purchase {}
+
+.flex1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.payment__2023 {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.flex3 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.flex4 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.flex5 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.payment__flex {
+    padding: 0 15px;
+}
+
+.payment__purchase {
+    font-weight: bold;
+}
+
+.payment__subtotal {
+    font-weight: bold;
+}
+
+.payment__total {
+    font-weight: bold;
+}
+
+.payment__fee {
+    font-weight: bold;
+}
+
+.payment__currency {
+    font-weight: bold;
+}
+
+.payment__bill1 {
+    border-right: 10px dashed #ef629f;
+    padding-right: 20px;
+}
+
+.payment__tutoring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #ef629f;
+}
+
+.payment__right {
+    background: #eecda3;
+    background: linear-gradient(to bottom, #ef629f, #eecda3);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.payment__li1 {
+    display: flex;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.payment__li2 {
+    display: flex;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.payment__li3 {
+    display: flex;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.payment__li4 {
+    display: flex;
+    margin-bottom: 15px;
+    color: #fff;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.payment__li5 {
+    display: flex;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.payment__li6 {
+    display: flex;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.payment__ttli1 {
+    display: flex;
+}
+
+.payment__ttli2 {
+    display: flex;
+}
+
+.payment__tutors,
+.payment__sub,
+.payment__prices,
+.payment__sessiondates,
+.payment__duration,
+.payment__times {
+    margin-right: 10px;
+}
+
+.payment__searchs,
+.payment__spaces {
+    height: 41px !important;
+}
+
+:where(.css-dev-only-do-not-override-mxhywb).ant-table-wrapper {
+    clear: both;
+    max-width: 100%;
+    border: 3px solid #ef629f !important;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+:where(.css-dev-only-do-not-override-mxhywb).ant-table-wrapper .ant-table-thead>tr>th {
+    position: relative;
+    color: #ef629f;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: start;
+    background: #ffffff;
+    border-bottom: 3px solid #ef629f;
+    transition: background 0.2s ease;
+}
+
+:where(.css-dev-only-do-not-override-mxhywb).ant-table-wrapper .ant-table-pagination.ant-pagination {
+    /* background-color: #ef629f;
+      border-radius: 0 0 5px 5px;
+      padding: 10px; */
+}
+
+:where(.css-dev-only-do-not-override-mxhywb).ant-pagination .ant-pagination-item-active {
+    font-weight: 600;
+    background-color: #ffffff;
+    border-color: #ef629f;
+}
+
+:where(.css-dev-only-do-not-override-mxhywb).ant-pagination .ant-pagination-item-active a {
+    color: #ef629f;
+}
