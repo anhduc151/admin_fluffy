@@ -34,17 +34,11 @@ function CompactCard({ param, setExpanded }) {
       layoutId="expandableCard"
       onClick={setExpanded}
     >
-      <div className="radialBar">
-        <CircularProgressbar
-          value={param.barValue}
-          text={`${param.barValue}%`}
-        />
-        <span>{param.title}</span>
-      </div>
+      <span>{param.title}</span>
       <div className="detail">
         <Png />
         <span>${param.value}</span>
-        <span>Last 24 hours</span>
+        {/* <span>Last year</span> */}
       </div>
     </motion.div>
   );
@@ -91,13 +85,18 @@ function ExpandedCard({ param, setExpanded }) {
       xaxis: {
         type: "datetime",
         categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z",
+          "2023-01-01T00:00:00.000Z",
+          "2023-02-01T00:00:00.000Z",
+          "2023-03-01T00:00:00.000Z",
+          "2023-04-01T00:00:00.000Z",
+          "2023-05-01T00:00:00.000Z",
+          "2023-06-01T00:00:00.000Z",
+          "2023-07-01T00:00:00.000Z",
+          "2023-08-01T00:00:00.000Z",
+          "2023-09-01T00:00:00.000Z",
+          "2023-10-01T00:00:00.000Z",
+          "2023-11-01T00:00:00.000Z",
+          "2023-12-01T00:00:00.000Z",
         ],
       },
     },
@@ -119,7 +118,7 @@ function ExpandedCard({ param, setExpanded }) {
       <div className="chartContainer">
         <Chart options={data.options} series={param.series} type="area" />
       </div>
-      <span>Last 24 hours</span>
+      {/* <span>Last year</span> */}
     </motion.div>
   );
 }
