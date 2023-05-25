@@ -7,6 +7,8 @@ import SignIn from '../SignIn/index'
 import RequestTutor from '../Pages/Request';
 import Session from '../Pages/Session'
 import Messages from '../Pages/Messages';
+import Courses from '../Pages/Courses'
+import ViewCourse from '../Pages/Viewcourse'
 
 const publicRoutes = [
         { path: '/signin', component: SignIn},
@@ -17,6 +19,8 @@ const publicRoutes = [
         { path: '/request', component: RequestTutor},
         { path: '/session', component: Session},
         { path: '/messages', component: Messages},
+        { path: '/courses', component: Courses},
+        { path: '/courses/:id', component: ViewCourse},
 ]
 
 const privateRoutes = [

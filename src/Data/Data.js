@@ -8,6 +8,7 @@ import {
   UilFolderQuestion,
   UilBooks,
   UilCommentMessage,
+  UilAirplay,
   // UilSignOutAlt,
 } from "@iconscout/react-unicons";
 
@@ -60,6 +61,12 @@ export const SidebarData = [
     url: '/messages',
     icon: UilCommentMessage,
     heading: 'Messages'
+  },
+  {
+    id: 8,
+    url: '/courses',
+    icon: UilAirplay,
+    heading: 'Courses'
   },
 ];
 

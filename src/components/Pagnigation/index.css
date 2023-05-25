@@ -1,0 +1,9 @@
+.pagnigation_all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.pagnigation {
+    margin: 20px;
+}

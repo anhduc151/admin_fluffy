@@ -1,0 +1,156 @@
+.course_box {
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+  max-width: 340px;
+  overflow: hidden;
+  color: black;
+  border: 3px solid #ef709f;
+
+  padding: 5px;
+}
+
+.course_thumnail {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 220px;
+}
+
+.course_thumnail img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.course_box_content {
+  padding: 5px 10px;
+  display: flex;
+  font-family: "Ysabeau, sans-serif";
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  height: calc(100% - 220px);
+}
+
+.course_box_content .course_author {
+  width: 100%;
+  display: flex;
+}
+
+.course_box_content .course_author_image {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.course_box_content .course_author img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.course_author {
+  display: flex;
+  align-items: center;
+}
+
+.course_author h4 {
+  margin-left: 20px;
+}
+
+
+.course_box_content .course_box_content_title {
+  font-size: 22px;
+  padding: 8px 0;
+  color: #ad1457;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.course_box_content_des {
+  flex: 1;
+  padding: 15px 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.course_box_content_des p {
+  white-space: wrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 25px;
+  -webkit-line-clamp: 3;
+  height: 76px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  color: black;
+}
+
+.course_box_content a {
+  padding: 8px 20px;
+  border: 3px solid #ef709f;
+  color: #ef709f;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+  text-decoration: none;
+  /* margin-top: 16px; */
+}
+
+.course_box_content a:hover {
+  background-color: #87ddebcb;
+}
+
+.information_tutor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infor_avt1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.infor_title1 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.infor_date1,
+.infor_schools,
+.infor_company {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.infor_company {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.infor_descreption {
+  margin-top: 20px;
+  width: 100%;
+  height: 120px;
+  border: 3px dashed #ef709f;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.infor_content {
+  font-size: 15px;
+}
