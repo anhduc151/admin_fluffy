@@ -11,7 +11,7 @@ import { setCurrentUser } from './Redux/feat/userSlice';
 function App() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const currentUser = useSelector(state=>state.user.currentUser)
+  const currentUser = useSelector(state => state.user.currentUser)
   const error = useSelector(state => state.error.content)
   const [visible, setVisible] = useState(false);
 
@@ -50,42 +50,45 @@ function App() {
       .then((result) => {
         dispatch(setSchools(result.data.getSchools.items))
       })
+  }, [currentUser]);
 
+
+  useEffect(() => {
     client
       .query({
         query: gql`
-          query getMe {
-            getMe {
-              id
-              lastName
-              firstName
-              email
-            }
+        query getMe {
+          getMe {
+            id
+            lastName
+            firstName
+            email
           }
-        `,
+        }
+      `,
       })
       .then((result) => {
         dispatch(setCurrentUser(result.data.getMe));
       })
-      .catch((error) => {
-        if(error){
-          navigate("/signin")
-        }
-      });
-  }, [currentUser]);
+    .catch((error) => {
+      if (error) {
+        navigate("/signin")
+      }
+    });
+  }, [currentUser])
 
 
   return (
     <>
       {visible && <NotificationComponent error={error} />}
-        <div className='App'>
-          <Routes>
-            {publicRoutes.map((route, index) => {
-              const Page = route.component
-              return <Route key={index} path={route.path} element={<Page />} />
-            })}
-          </Routes>
-        </div>
+      <div className='App'>
+        <Routes>
+          {publicRoutes.map((route, index) => {
+            const Page = route.component
+            return <Route key={index} path={route.path} element={<Page />} />
+          })}
+        </Routes>
+      </div>
     </>
   );
 }
