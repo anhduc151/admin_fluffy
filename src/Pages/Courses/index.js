@@ -52,7 +52,7 @@ const GET_COURSES = gql`
 function Courses() {
     const [courses, setCourses] = useState([]);
     const [params, setParams] = useState({
-        limit: 10,
+        limit: 9,
         page: 1,
     });
     const [meta, setMeta] = useState(null);

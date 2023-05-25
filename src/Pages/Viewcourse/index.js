@@ -1,8 +1,8 @@
 import "../Viewcourse/viewcourses.css"
 import React, { useEffect, useState } from "react";
 import { Button, Collapse, Modal, Radio, Rate } from "antd";
-import { useParams } from "react-router-dom";
-import { gql } from "@apollo/client";
+import { useNavigate, useParams } from "react-router-dom";
+import { gql, useMutation } from "@apollo/client";
 import client from "../../configGQL";
 import { useDispatch } from "react-redux";
 import { setError } from "../../Redux/feat/notificationSlice";
@@ -61,6 +61,14 @@ const QUERY_COURSE_DETAIL = gql`
 `;
 
 
+const UN_PULISH = gql`
+mutation changeStatusCourse($input: ChangeStatusCourseDto!){
+  changeStatusCourse(input: $input){
+    id
+  }
+}
+`
+
 
 function Viewcourse() {
   const { Panel } = Collapse;
@@ -72,9 +80,9 @@ function Viewcourse() {
     link: null,
   });
 
-  const [dateSet, setDateSet] = useState([]);
-  const [nameSet, setNameSet] = useState()
-  const disabledDate = () => true;
+  const navigate = useNavigate()
+
+  const [unPulish] = useMutation(UN_PULISH)
 
 
 
@@ -97,7 +105,7 @@ function Viewcourse() {
       });
   }, [id]);
 
-  const showPromiseConfirm = async ({ title, id, name, handle }) => {
+  const showPromiseConfirm = async ({ title, handle }) => {
     confirm({
       title: title,
       icon: <ExclamationCircleFilled />,
@@ -106,8 +114,24 @@ function Viewcourse() {
     });
   };
 
-  const handleUnPuLish = () => {
-
+  const handleUnPubLish = () => {
+    const getData = async () => {
+      try {
+        const result = await unPulish({
+          variables: {
+            input: {
+              courseId: id,
+              isPublish: false,
+            },
+          },
+        });
+        dispatch(setError({ message: "UnPublish successfully" }));
+        navigate("/courses")
+      } catch (error) {
+        dispatch(setError({ message: error.message }));
+      }
+    };
+    getData();
   }
   return (
     <>
@@ -151,19 +175,19 @@ function Viewcourse() {
                           <img src={courseData?.imageUrl} alt="" className="course_image1" />
                         </div>
                         <div className="course_box1_content1">
-                          <h3 className="course_box1_content_title1">{courseData.name}</h3>
-                          <Rate disabled defaultValue={courseData.ratting} />
+                          <h3 className="course_box1_content_title1">{courseData?.name}</h3>
+                          <Rate disabled defaultValue={courseData?.ratting} />
                           <div className="course_author1">
                             <div className="course_author_image1">
-                              <img src={courseData.tutorProfile.tutor.avatarUrl} alt="" />
+                              <img src={courseData?.tutorProfile?.tutor?.avatarUrl} alt="" />
                             </div>
-                            <h4 className="course_author1_info1">{`${courseData.tutorProfile.tutor.firstName} ${courseData.tutorProfile.tutor.lastName}`}</h4>
+                            <h4 className="course_author1_info1">{`${courseData?.tutorProfile?.tutor?.firstName} ${courseData?.tutorProfile?.tutor?.lastName}`}</h4>
                           </div>
                           <div className="course_box1_content_des1">
-                            <p>{courseData.description}</p>
+                            <p>{courseData?.description}</p>
                           </div>
                           <h3 className="dollar-h3">
-                            {courseData.price || 0}
+                            {courseData?.price || 0}
                             <i className="bx bx-dollar"></i>
                           </h3>
                           <div className="all__button2">
@@ -172,8 +196,8 @@ function Viewcourse() {
                                 className="inline-btn1"
                                 onClick={() => {
                                   showPromiseConfirm({
-                                    title: `Do you want unpulish ${courseData.name}!!`,
-                                    handle: () => handleUnPuLish(),
+                                    title: `Do you want unpublish ${courseData?.name}?`,
+                                    handle: () => handleUnPubLish(),
                                   })
                                 }}
                               >
@@ -190,9 +214,9 @@ function Viewcourse() {
                         <h1 className="view__h2r">Course Program:</h1>
                       </div>
                       <Collapse>
-                        {courseData.coursePrograms.map((el, index) => (
+                        {courseData?.coursePrograms?.map((el, index) => (
                           <Panel header={el.title} key={index}>
-                            {el.courseProgramPhases.map((phase) => (
+                            {el.courseProgramPhases?.map((phase) => (
                               <p
                                 className="introduction__view"
                                 onClick={() =>
