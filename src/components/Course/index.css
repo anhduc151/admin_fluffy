@@ -7,8 +7,8 @@
   overflow: hidden;
   color: black;
   border: 3px solid #ef709f;
-
   padding: 5px;
+  height: auto;
 }
 
 .course_thumnail {
@@ -31,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  height: calc(100% - 220px);
+  height: calc(100% - 240px); 
 }
 
 .course_box_content .course_author {
@@ -73,7 +73,7 @@
 
 .course_box_content_des {
   flex: 1;
-  padding: 15px 0px;
+  padding: 15px 0px;  
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -153,4 +153,11 @@
 
 .infor_content {
   font-size: 15px;
+}
+
+.student__box {
+  grid-gap: 50px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* overflow-y: scroll; */
 }

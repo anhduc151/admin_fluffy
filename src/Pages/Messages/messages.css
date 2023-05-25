@@ -1,5 +1,20 @@
 .App_content1 {
     width: 80%;
     margin-top: 40px;
+    max-height: 860px; 
+    overflow-y: auto;
+    padding-bottom: 10%;
+}
 
+.App_content1::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.App_content1::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.App_content1::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
 }
